@@ -76,7 +76,7 @@ int main() {
     attrs.border_pixel = 0;
     window = XCreateWindow(display, root, 0, 0, width, height, 0, vinfo.depth, InputOutput, vinfo.visual, CWColormap | CWBorderPixel | CWBackPixel | CWOverrideRedirect, &attrs);
     XShapeCombineRectangles(display, window, ShapeInput, 0, 0, NULL, 0, ShapeSet, 0);
-    Atom above = XInternAtom(display, "_NET_WM_STATE_ABOVE", True);
+    Atom above = XInternAtom(display, "_NET_WM_STATE_ABOVE", False);
     Atom state = XInternAtom(display, "_NET_WM_STATE", False);
     XChangeProperty(display, window, state, XA_ATOM, 32, PropModeReplace, (unsigned char *)&above, 1);
     XStoreName(display, window, "vedal is the greatest");
